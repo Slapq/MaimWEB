@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦麦！MaiCore-MaiBot - 基于大语言模型的可交互智能体</title>
+    <meta name="description" content="麦麦是一个基于大语言模型的可交互智能体，具有智能对话、插件系统、实时思维等功能，追求最像而不是好的设计原则。">
+    <meta name="keywords" content="麦麦,MaiBot,AI机器人,QQ机器人,大语言模型,智能对话,Python,开源">
+    <meta name="author" content="SengokuCola">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#3b82f6">
+    <link rel="canonical" href="https://mai-mai.org">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="麦麦！MaiCore-MaiBot - 基于大语言模型的可交互智能体">
+    <meta property="og:description" content="麦麦是一个基于大语言模型的可交互智能体，具有智能对话、插件系统、实时思维等功能，追求最像而不是好的设计原则。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mai-mai.org">
+    <meta property="og:image" content="https://mai-mai.org/images/maimai-logo.png">
+    <meta property="og:site_name" content="麦麦官网">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="麦麦！MaiCore-MaiBot - 基于大语言模型的可交互智能体">
+    <meta name="twitter:description" content="麦麦是一个基于大语言模型的可交互智能体，具有智能对话、插件系统、实时思维等功能。">
+    <meta name="twitter:image" content="https://mai-mai.org/images/maimai-logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "麦麦！MaiCore-MaiBot",
+        "description": "基于大语言模型的可交互智能体",
+        "url": "https://mai-mai.org",
+        "author": {
+            "@type": "Person",
+            "name": "SengokuCola"
+        },
+        "programmingLanguage": "Python",
+        "operatingSystem": "Cross-platform"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header 导航区 -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <img src="./images/maimai-logo.png" alt="麦麦Logo" class="nav__logo" onerror="this.style.display='none'">
+                <span class="nav__title">MaiBot</span>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="https://docs.mai-mai.org" class="nav__link" target="_blank" rel="noopener">
+                            <span class="nav__icon">📚</span>
+                            文档
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="https://www.bilibili.com/video/BV1amAneGE3P" class="nav__link" target="_blank" rel="noopener">
+                            <span class="nav__icon">🎥</span>
+                            演示
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="https://github.com/MaiM-with-u/MaiBot" class="nav__link" target="_blank" rel="noopener">
+                            <span class="nav__icon">💻</span>
+                            代码
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#community" class="nav__link">
+                            <span class="nav__icon">👥</span>
+                            社区
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main" role="main">
+        <!-- Hero 主视觉区 -->
+        <section class="hero section" id="hero">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span class="hero__title-main">麦麦！</span>
+                        <span class="hero__title-sub">MaiCore-MaiBot</span>
+                    </h1>
+                    <p class="hero__subtitle">基于大语言模型的可交互智能体</p>
+                    <p class="hero__description">
+                        创造一个活跃在QQ群聊的"生命体"<br>
+                        追求"最像而不是好"的设计原则
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="https://docs.mai-mai.org" class="btn btn--primary" target="_blank" rel="noopener">
+                            快速开始
+                        </a>
+                        <a href="https://www.bilibili.com/video/BV1amAneGE3P" class="btn btn--secondary" target="_blank" rel="noopener">
+                            观看演示
+                        </a>
+                    </div>
+                    <div class="hero__version">
+                        <span class="version-badge">v0.9.1</span>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__avatar">
+                        <img src="./images/maimai-avatar.jpg" alt="麦麦AI智能体头像，圆形设计" class="hero__avatar-img" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features 特色功能区 -->
+        <section class="features section" id="features">
+            <div class="features__container container">
+                <div class="section__header">
+                    <h2 class="section__title">核心功能特色</h2>
+                    <p class="section__subtitle">强大的AI智能体功能集合</p>
+                </div>
+                
+                <div class="features__grid">
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature__icon">💭</div>
+                        <h3 class="feature__title">智能对话系统</h3>
+                        <p class="feature__description">基于 LLM 的自然语言交互，支持normal和focus统一化处理</p>
+                    </div>
+                    
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature__icon">🔌</div>
+                        <h3 class="feature__title">强大插件系统</h3>
+                        <p class="feature__description">全面重构的插件架构，支持完整的管理API和权限控制</p>
+                    </div>
+                    
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature__icon">🤔</div>
+                        <h3 class="feature__title">实时思维系统</h3>
+                        <p class="feature__description">模拟人类思考过程，让AI的思维过程更加透明</p>
+                    </div>
+                    
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature__icon">🧠</div>
+                        <h3 class="feature__title">表达学习功能</h3>
+                        <p class="feature__description">学习群友的说话风格和表达方式，更好地融入群聊</p>
+                    </div>
+                    
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature__icon">💝</div>
+                        <h3 class="feature__title">情感表达系统</h3>
+                        <p class="feature__description">情绪系统和表情包系统，让AI更有人情味</p>
+                    </div>
+                    
+                    <div class="feature__card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="feature__icon">🔄</div>
+                        <h3 class="feature__title">动态人格系统</h3>
+                        <p class="feature__description">自适应的性格特征和表达方式，持续进化的AI人格</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo 演示展示区 -->
+        <section class="demo section" id="demo">
+            <div class="demo__container container">
+                <div class="section__header">
+                    <h2 class="section__title">项目演示</h2>
+                    <p class="section__subtitle">了解麦麦的实际运行效果</p>
+                </div>
+                
+                <div class="demo__content">
+                    <div class="demo__video">
+                        <div class="video__wrapper">
+                            <a href="https://www.bilibili.com/video/BV1amAneGE3P" target="_blank" rel="noopener" class="video__link">
+                                <img src="./images/video-thumbnail.jpg" alt="麦麦AI智能体演示视频缩略图，展示实际运行效果" class="video__thumbnail" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQwIiBoZWlnaHQ9IjM2MCIgdmlld0JveD0iMCAwIDY0MCAzNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2NDAiIGhlaWdodD0iMzYwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0yODAgMjAwTDM2MCAyNDBMMjgwIDI4MFYyMDBaIiBmaWxsPSIjNkI3MjgwIi8+Cjx0ZXh0IHg9IjMyMCIgeT0iMTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3MjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPuinhumikea8lOekuuinhumikTwvdGV4dD4KPC9zdmc+'">
+                                <div class="video__play">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.9)"/>
+                                        <path d="M10 8L16 12L10 16V8Z" fill="#3b82f6"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <p class="video__caption">点击观看B站演示视频</p>
+                    </div>
+                    
+                    <div class="demo__stats">
+                        <div class="stats__grid">
+                            <div class="stat__item">
+                                <div class="stat__icon">⭐</div>
+                                <div class="stat__content">
+                                    <div class="stat__number" id="github-stars">-</div>
+                                    <div class="stat__label">GitHub Stars</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat__item">
+                                <div class="stat__icon">🍴</div>
+                                <div class="stat__content">
+                                    <div class="stat__number" id="github-forks">-</div>
+                                    <div class="stat__label">Forks</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat__item">
+                                <div class="stat__icon">🏷️</div>
+                                <div class="stat__content">
+                                    <div class="stat__number">v0.9.1</div>
+                                    <div class="stat__label">Latest Version</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat__item">
+                                <div class="stat__icon">👥</div>
+                                <div class="stat__content">
+                                    <div class="stat__number">1000+</div>
+                                    <div class="stat__label">Community Members</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community 社区链接区 -->
+        <section class="community section" id="community">
+            <div class="community__container container">
+                <div class="section__header">
+                    <h2 class="section__title">加入社区</h2>
+                    <p class="section__subtitle">与开发者和用户一起交流讨论</p>
+                </div>
+                
+                <div class="community__grid">
+                    <div class="community__card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="community__header">
+                            <div class="community__icon">🔧</div>
+                            <div class="community__info">
+                                <h3 class="community__title">技术交流一群</h3>
+                                <p class="community__members">500+ 成员</p>
+                            </div>
+                        </div>
+                        <p class="community__description">技术讨论、问题解答、功能建议</p>
+                        <div class="community__actions">
+                            <a href="https://qm.qq.com/q/VQ3XZrWgMs" class="btn btn--outline" target="_blank" rel="noopener">
+                                加入群聊
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="community__card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="community__header">
+                            <div class="community__icon">🔧</div>
+                            <div class="community__info">
+                                <h3 class="community__title">技术交流二群</h3>
+                                <p class="community__members">500+ 成员</p>
+                            </div>
+                        </div>
+                        <p class="community__description">技术讨论、问题解答、功能建议</p>
+                        <div class="community__actions">
+                            <a href="https://qm.qq.com/q/RzmCiRtHEW" class="btn btn--outline" target="_blank" rel="noopener">
+                                加入群聊
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="community__card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="community__header">
+                            <div class="community__icon">💬</div>
+                            <div class="community__info">
+                                <h3 class="community__title">聊天吹水群</h3>
+                                <p class="community__members">300+ 成员</p>
+                            </div>
+                        </div>
+                        <p class="community__description">日常聊天、经验分享、轻松交流</p>
+                        <div class="community__actions">
+                            <a href="https://qm.qq.com/q/JxvHZnxyec" class="btn btn--outline" target="_blank" rel="noopener">
+                                加入群聊
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="community__card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="community__header">
+                            <div class="community__icon">🛠️</div>
+                            <div class="community__info">
+                                <h3 class="community__title">插件开发群</h3>
+                                <p class="community__members">200+ 成员</p>
+                            </div>
+                        </div>
+                        <p class="community__description">插件开发、测试版体验、深度定制</p>
+                        <div class="community__actions">
+                            <a href="https://qm.qq.com/q/1036092828" class="btn btn--outline" target="_blank" rel="noopener">
+                                加入群聊
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="community__footer">
+                    <p class="community__note">
+                        💡 建议先加入技术交流群获取最新信息和支持
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer 页脚信息区 -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__brand">
+                        <img src="./images/maimai-logo.jpg" alt="麦麦Logo" class="footer__logo" onerror="this.style.display='none'">
+                        <span class="footer__title">麦麦</span>
+                    </div>
+                    <p class="footer__description">
+                        基于大语言模型的可交互智能体<br>
+                        创造活跃在QQ群聊的"生命体"
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__heading">项目</h4>
+                    <ul class="footer__links">
+                        <li><a href="https://github.com/MaiM-with-u/MaiBot" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://docs.mai-mai.org" target="_blank" rel="noopener">文档</a></li>
+                        <li><a href="https://docs.mai-mai.org/manual/deployment/mmc_deploy_windows.html" target="_blank" rel="noopener">部署教程</a></li>
+                        <li><a href="https://github.com/MaiM-with-u/MaiBot/releases" target="_blank" rel="noopener">更新日志</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__heading">社区</h4>
+                    <ul class="footer__links">
+                        <li><a href="#community">QQ群</a></li>
+                        <li><a href="https://www.bilibili.com/video/BV1amAneGE3P" target="_blank" rel="noopener">B站演示</a></li>
+                        <li><a href="https://docs.mai-mai.org/contribute" target="_blank" rel="noopener">贡献指南</a></li>
+                        <li><a href="https://github.com/MaiM-with-u/MaiBot/issues" target="_blank" rel="noopener">问题反馈</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__heading">开发团队</h4>
+                    <div class="footer__team">
+                        <div class="team__member">
+                            <span class="team__role">创始人</span>
+                            <a href="https://github.com/SengokuCola" target="_blank" rel="noopener" class="team__name">SengokuCola (千石可乐)</a>
+                        </div>
+                        <div class="team__member">
+                            <span class="team__role">美术贡献者</span>
+                            <a href="https://space.bilibili.com/1344099355" target="_blank" rel="noopener" class="team__name">略nd</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    <p>&copy; 2025 麦麦组织. All rights reserved.</p>
+                </div>
+                <div class="footer__legal">
+                    <a href="https://github.com/MaiM-with-u/MaiBot/blob/main/LICENSE" target="_blank" rel="noopener">开源许可</a>
+                    <span class="footer__separator">|</span>
+                    <a href="https://github.com/MaiM-with-u/MaiBot/blob/main/PRIVACY.md" target="_blank" rel="noopener">隐私政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="返回顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+</body>
+</html>
